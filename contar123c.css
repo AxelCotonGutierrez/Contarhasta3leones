@@ -24,22 +24,13 @@ h1 {
   margin: auto;
   border: 3px solid #000;
   border-radius: 20px;
-  padding: 50px 0;
-  overflow: hidden; /* Evitar desbordamiento horizontal en dispositivos móviles */
-}
-
-.container-row {
   display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  padding: 50px 0;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
-}
-
-.container-row img {
-  max-width: 30%;
-  height: auto;
-  object-fit: contain;
-  margin: 5px; /* Ajusta el valor según tus necesidades */
+  overflow: hidden; /* Evitar desbordamiento horizontal en dispositivos móviles */
 }
 
 .textosuperior {
@@ -104,12 +95,15 @@ h1 {
     padding: 20px;
   }
   
-  .container-row {
-    flex-wrap: nowrap;
+  .container-column {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
   }
   
-  .container-row img {
-    max-width: calc(100% / 3 - 10px);
+  .container-column .game-image {
+    width: calc(100% / 3 - 10px);
     height: auto;
     object-fit: contain;
     margin: 5px;
