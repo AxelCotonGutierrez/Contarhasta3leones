@@ -129,9 +129,7 @@ h1 {
     max-width: 100%; /* Ancho completo en dispositivos móviles */
   }
 
-  .container img {
-    width: calc(100% / 3 - 10px); /* Ajusta el valor según tus necesidades */
-    height: auto;
-    object-fit: contain;
+  container img {
+    width: calc(33.33% - 10px); /* Ajusta el valor según tus necesidades */
   }
 }
