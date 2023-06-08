@@ -117,29 +117,20 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
 }
 
 .container img {
-  width: calc(100% / 3 - 10px);
+  flex: 1 1 30%; /* Establece el tamaño máximo del 30% del contenedor */
   height: auto;
+  max-width: 100%;
   object-fit: contain;
   margin: 5px;
 }
 
 @media (max-width: 768px) {
-  .container {
-    padding: 20px;
-  }
-
-  .guess-button {
-    width: 80px;
-    height: 80px;
-    font-size: 40px;
-  }
-
-  .game-image {
-    max-width: 80px;
+  .container img {
+    flex-basis: 80px; /* Tamaño base para dispositivos móviles */
     max-height: 150px;
-    object-fit: contain;
   }
 }
