@@ -121,16 +121,17 @@ h1 {
 }
 
 .container img {
-  flex: 1 1 30%; /* Establece el tamaño máximo del 30% del contenedor */
-  height: auto;
-  max-width: 100%;
-  object-fit: contain;
   margin: 5px;
 }
 
 @media (max-width: 768px) {
   .container img {
-    flex-basis: 80px; /* Tamaño base para dispositivos móviles */
-    max-height: 150px;
+    width: calc(100% / 3 - 10px); /* Ajusta el valor según tus necesidades */
+    height: auto;
+    object-fit: contain;
+  }
+
+  .container {
+    max-width: 100%; /* Ancho completo en dispositivos móviles */
   }
 }
