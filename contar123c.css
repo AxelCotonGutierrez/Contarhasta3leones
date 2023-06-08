@@ -26,8 +26,6 @@ h1 {
   border-radius: 20px;
   display: flex;
   flex-direction: column;
-  flex-wrap: nowrap;
-  padding: 50px 0;
   justify-content: center;
   align-items: center;
   overflow: hidden; /* Evitar desbordamiento horizontal en dispositivos móviles */
@@ -41,8 +39,6 @@ h1 {
   border-radius: 20px;
   display: flex;
   flex-direction: column;
-  flex-wrap: nowrap;
-  padding: 50px 0;
   justify-content: center;
   align-items: center;
   overflow: hidden; /* Evitar desbordamiento horizontal en dispositivos móviles */
@@ -61,6 +57,10 @@ h1 {
 
 #buttons-container {
   margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; /* Ajusta los botones en varias filas si es necesario */
 }
 
 .guess-button {
@@ -110,7 +110,7 @@ h1 {
     padding: 20px;
   }
 
-  .game-image {
+  .container .game-image {
     width: 100%;
     height: auto;
     object-fit: contain;
