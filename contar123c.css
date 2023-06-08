@@ -44,23 +44,11 @@ h1 {
   overflow: hidden; /* Evitar desbordamiento horizontal en dispositivos móviles */
 }
 
-.container img {
-  max-width: 100%;
+.game-image {
+  width: 50%;
   height: auto;
   object-fit: contain;
   margin: 5px; /* Ajusta el valor según tus necesidades */
-}
-
-.container.one-image {
-  justify-content: center;
-}
-
-.container.two-images {
-  justify-content: space-between;
-}
-
-.container.three-images {
-  justify-content: space-around;
 }
 
 .textosuperior {
@@ -218,7 +206,7 @@ h1 {
   }
   
   .container-column .game-image {
-    width: calc(100% / 3 - 10px);
+    width: 33%;
     height: auto;
     object-fit: contain;
     margin: 5px;
