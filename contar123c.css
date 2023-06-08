@@ -125,5 +125,6 @@ h1 {
 
   .game-image {
     max-height: 150px;
+    width: 33%;
   }
 }
