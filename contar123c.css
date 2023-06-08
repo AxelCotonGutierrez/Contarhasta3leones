@@ -132,4 +132,14 @@ h1 {
   }
 
   .guess-button {
-   
+    width: 80px;
+    height: 80px;
+    font-size: 40px;
+  }
+
+  .game-image {
+    max-width: 80px;
+    max-height: 150px;
+    object-fit: contain;
+  }
+}
