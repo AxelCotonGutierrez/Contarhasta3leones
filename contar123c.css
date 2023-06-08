@@ -103,4 +103,15 @@ h1 {
   .container {
     padding: 20px;
   }
+  
+  .container-row {
+    flex-wrap: nowrap;
+  }
+  
+  .container-row img {
+    max-width: calc(100% / 3 - 10px);
+    height: auto;
+    object-fit: contain;
+    margin: 5px;
+  }
 }
