@@ -126,5 +126,6 @@ h1 {
   .game-image {
     max-width: 80px;
     max-height: 150px;
+    object-fit: contain;
   }
 }
