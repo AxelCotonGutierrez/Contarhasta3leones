@@ -126,7 +126,7 @@ h1 {
 
 @media (max-width: 768px) {
   .container img {
-    width: 33.33%; /* Ajusta el valor según tus necesidades */
+    width: 30%; /* Ajusta el valor según tus necesidades */
     height: auto;
     object-fit: contain;
   }
