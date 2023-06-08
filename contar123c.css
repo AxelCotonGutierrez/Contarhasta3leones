@@ -122,16 +122,17 @@ h1 {
 
 .container img {
   margin: 5px;
+  max-width: calc(100% / 3 - 10px); /* Ajusta el valor según tus necesidades */
+  height: auto;
+  object-fit: contain;
 }
 
 @media (max-width: 768px) {
-  .container {
-    max-width: 80%; /* Ajusta el valor según tus necesidades */
+  .container img {
+    max-width: calc(80% / 3 - 10px); /* Ajusta el valor según tus necesidades */
   }
 
-  .container img {
-    width: calc(100% / 3 - 10px); /* Ajusta el valor según tus necesidades */
-    height: auto;
-    object-fit: contain;
+  .container {
+    max-width: 100%; /* Ancho completo en dispositivos móviles */
   }
 }
