@@ -130,6 +130,6 @@ h1 {
   }
 
   container img {
-    width: calc(25% - 10px); /* Ajusta el valor según tus necesidades */
+    width: calc(20% - 7px); /* Ajusta el valor según tus necesidades */
   }
 }
