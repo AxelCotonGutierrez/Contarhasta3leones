@@ -1,9 +1,9 @@
 // Axel Cotón Gutiérrez Copyright 2023
       // Generar imágenes aleatorias
       const images = [
-        "https://drive.google.com/uc?export=view&id=1k4gWE5MPSpBigQHLPwTn2m5xmUT3YaQ8",
-        "https://drive.google.com/uc?export=view&id=1k4gWE5MPSpBigQHLPwTn2m5xmUT3YaQ8",
-        "https://drive.google.com/uc?export=view&id=1k4gWE5MPSpBigQHLPwTn2m5xmUT3YaQ8"
+        "https://raw.githubusercontent.com/AxelCotonGutierrez/Contarhasta3leones/master/img/leon.png",
+        "https://raw.githubusercontent.com/AxelCotonGutierrez/Contarhasta3leones/master/img/leon.png",
+        "https://raw.githubusercontent.com/AxelCotonGutierrez/Contarhasta3leones/master/img/leon.png"
       ];
     
       let score = 0; // Contador de respuestas correctas
