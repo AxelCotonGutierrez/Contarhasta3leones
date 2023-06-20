@@ -113,12 +113,7 @@ h1 {
 }
 
 /* Nuevo código para redimensionar imágenes en dispositivos móviles */
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
+
 
 .container img {
   margin: 5px;
