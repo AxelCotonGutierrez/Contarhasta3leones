@@ -128,8 +128,8 @@ h1 {
   }
 
   .container .game-image:only-child {
-    flex-basis: 75%; /* Ajustar el tamaño de la única imagen */
-    max-width: 75%; /* Ajustar el tamaño de la única imagen */
+    flex-basis: 60%; /* Ajustar el tamaño de la única imagen */
+    max-width: 60%; /* Ajustar el tamaño de la única imagen */
   }
 
   .guess-button {
