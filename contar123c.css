@@ -112,20 +112,24 @@ h1 {
   font-weight: bold;
 }
 
-/* Nuevo código para redimensionar imágenes en dispositivos móviles */
 
 
-.container img {
-  margin: 5px;
-}
-
+/* Visión en dispositivos móviles */
 @media (max-width: 768px) {
   .container {
     max-width: 100%; /* Ancho completo en dispositivos móviles */
+    flex-wrap: wrap; /* Permitir envolver las imágenes en múltiples líneas */
   }
 
-  container img {
-    width: calc(30% - 10px); /* Ajusta el valor según tus necesidades */
+  .container .game-image {
+    flex-basis: 20%; /* Ajustar según las necesidades */
+    max-width: 20%; /* Ajustar según las necesidades */
+    margin: 1%; /* Espacio entre las imágenes */
+  }
+
+  .container .game-image:only-child {
+    flex-basis: 40%; /* Ajustar el tamaño de la única imagen */
+    max-width: 40%; /* Ajustar el tamaño de la única imagen */
   }
 
   .guess-button {
