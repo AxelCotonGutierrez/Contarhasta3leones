@@ -122,8 +122,8 @@ h1 {
   }
 
   .container .game-image {
-    flex-basis: 30%; /* Ajustar según las necesidades */
-    max-width: 30%; /* Ajustar según las necesidades */
+    flex-basis: 40%; /* Ajustar según las necesidades */
+    max-width: 40%; /* Ajustar según las necesidades */
     margin: 1%; /* Espacio entre las imágenes */
   }
 
