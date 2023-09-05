@@ -5,6 +5,8 @@
 
 Dentro del blog: https://axelcotongutierrez.github.io/learningmathematicas/
 
+Vídeo Explicativo: https://www.youtube.com/watch?v=Lly4SNqy5ZU
+
 Juego para Infantil para aprender a contar hasta tres.
 
 Puedes probar el juego en esta url:
