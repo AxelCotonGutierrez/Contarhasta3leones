@@ -1,13 +1,13 @@
 # Juego para aprender a contar usando imágenes de leones
 
 
-![Juego de los leones](https://axelcotongutierrez.github.io/learningmathematicas/assets/images//posts/SND/J01SND.jpg)
+![Juego de los leones](https://axelcotongutierrez.github.io/learningmathematicas/assets/images//posts/Contar3/jcontar3.jpg)
 
 Dentro del blog: https://axelcotongutierrez.github.io/learningmathematicas/
 
-Vídeo Explicativo: https://www.youtube
+Vídeo Explicativo: https://www.youtube.com/watch?v=Lly4SNqy5ZU
 
-Juego para ESO, ESPA o ESPAD para aprender a usar el Sistema Numérico Decimal
+Juego para Infantil o Primaria
 
 Puedes probar el juego en esta url:
 
