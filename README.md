@@ -1,7 +1,7 @@
 # Juego para aprender a contar usando imágenes de leones
 
 
-![Juego de los leones](https://axelcotongutierrez.github.io/learningmathematicas/assets/images//posts/Contar3/jcontar3.jpg)
+![Juego de los leones](https://axelcotongutierrez.github.io/learningmathematicas/assets/images//posts/02JContar3/jcontar3.jpg)
 
 Dentro del blog: https://axelcotongutierrez.github.io/learningmathematicas/
 
