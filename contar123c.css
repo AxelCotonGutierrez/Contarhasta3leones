@@ -112,12 +112,11 @@ h1 {
   font-weight: bold;
 }
 
-.center-table {
-  margin-left: auto;
-  margin-right: auto;
+table {
   border-collapse: separate; /* Asegura un espacio entre las celdas */
-  border-spacing: 10px; 
+  border-spacing: 10px; /* Ajusta el espacio como desees (por ejemplo, 10px) */
 }
+
 
 /* Visión en dispositivos móviles */
 @media (max-width: 768px) {
