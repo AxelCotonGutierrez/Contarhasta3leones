@@ -24,7 +24,7 @@
     cursor: pointer;
     line-height: 40px;
     text-align: center;
-    color: lightgray; /* Considera cambiar este color para mejor visibilidad */
+    color: white; /* Considera cambiar este color para mejor visibilidad */
     font-size: 1.3em; /* Tamaño de fuente actualizado */
     font-family: "Verdana";
     padding: 0 10px;
@@ -52,7 +52,7 @@
 }
 
 .menu li ul li:hover {
-    background-color: #6987BF;
+    background-color: black;
 }
 
 .menu li:hover ul {
