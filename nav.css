@@ -25,7 +25,7 @@
     cursor: pointer;
     line-height: 40px;
     text-align: center;
-    color: lightgray; /* Considerar cambiar para mejor visibilidad */
+    color: white; /* Considerar cambiar para mejor visibilidad */
     font-size: 1.3em; /* Tamaño de fuente */
     font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif; /* Familia de fuentes actualizada */
     padding: 0 10px;
@@ -35,7 +35,7 @@
 .menu li ul {
     display: none;
     position: absolute; /* Posicionamiento absoluto para los submenús */
-    background-color: gray; /* Fondo de los submenús */
+    background-color: black; /* Fondo de los submenús */
     width: auto; /* Ancho según el contenido */
     left: 0; /* Alinear a la izquierda del ítem del menú */
     top: 40px; /* Ubicar debajo del ítem del menú */
@@ -50,12 +50,12 @@
 
 .menu li ul a {
     line-height: 40px;
-    color: gray; /* Color del texto en submenús */
+    color: black; /* Color del texto en submenús */
     padding: 10px 20px; /* Padding para enlaces de submenús */
 }
 
 .menu li ul li:hover {
-    background-color: #6987BF; /* Color al pasar el ratón */
+    background-color: #12421f; /* Color al pasar el ratón */
 }
 
 .menu li:hover > ul {
