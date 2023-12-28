@@ -133,3 +133,14 @@
       // Agregar evento clic al botón "Volver a jugar"
       const playAgainButton = document.querySelector("#play-again-button");
       playAgainButton.addEventListener("click", restartGame);
+
+      document.querySelectorAll("nav ul li").forEach(item => {
+        item.addEventListener("click", function(event) {
+            let submenu = this.querySelector("ul");
+            if (submenu) {
+                submenu.style.display = submenu.style.display === "block" ? "none" : "block";
+                event.stopPropagation();
+            }
+        });
+    });
+    
