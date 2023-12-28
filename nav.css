@@ -79,3 +79,7 @@
     max-height: 30px; /* Altura máxima de la imagen */
     width: auto; /* Mantiene la proporción de la imagen */
 }
+/* Estilos Personalizados para la Barra de Navegación */
+header {
+    background-color: black;
+  }

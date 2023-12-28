@@ -117,10 +117,7 @@ table {
   border-spacing: 10px; /* Ajusta el espacio como desees (por ejemplo, 10px) */
 }
 
-/* Estilos Personalizados para la Barra de Navegación */
-header {
-  background-color: black;
-}
+
 
 /* Visión en dispositivos móviles */
 @media (max-width: 768px) {
