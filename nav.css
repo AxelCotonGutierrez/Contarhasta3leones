@@ -66,3 +66,7 @@
 .menu li:hover a {
     color: white; /* Color del texto al pasar el ratón */
 }
+.menu ul li a img {
+    max-height: 40px; /* Ajusta esto según tus necesidades */
+    width: auto; /* Mantiene la proporción de la imagen */
+}
