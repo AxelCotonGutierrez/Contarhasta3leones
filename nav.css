@@ -25,7 +25,7 @@
     cursor: pointer;
     line-height: 40px;
     text-align: center;
-    color: white; /* Considerar cambiar para mejor visibilidad */
+    color: white; /* Color del texto */
     font-size: 1.3em; /* Tamaño de fuente */
     font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif; /* Familia de fuentes actualizada */
     padding: 0 10px;
@@ -46,6 +46,7 @@
 .menu li ul li {
     width: auto; /* Ancho según el contenido */
     text-align: center;
+    background-color: black; /* Asegurar el fondo de los submenús */
 }
 
 .menu li ul a {
