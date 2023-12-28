@@ -143,3 +143,35 @@ table {
     margin-bottom: 10px;
   }
 }
+
+/* Navegador */
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+nav ul li {
+  position: relative;
+}
+
+nav ul li ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+}
+
+nav ul li:hover > ul {
+  display: block;
+}
+
+nav a {
+  display: block;
+  padding: 8px 16px;
+  text-decoration: none;
+  color: white;
+}
+
+nav a:hover {
+  background-color: #333;
+}
