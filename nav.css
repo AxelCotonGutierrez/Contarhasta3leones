@@ -18,7 +18,8 @@
     height: 100%;
     display: flex;
     align-items: center;
-    margin-right: 10px; /* Espacio adicional a la derecha de cada elemento */
+    margin-right: 10px;
+    margin-bottom: 0; /* Espacio adicional a la derecha de cada elemento */
 }
 
 .menu ul li:last-child {
