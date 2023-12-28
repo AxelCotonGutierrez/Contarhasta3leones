@@ -119,15 +119,52 @@ table {
 
 /* Estilos Personalizados para la Barra de Navegación */
 
-.navbar-nav > li > a {
-  font-size: 1.3em; /* Tamaño de la fuente para los enlaces en la barra de navegación */
+.mi-navbar {
+  background-color: #333;
+  color: white;
+  overflow: hidden;
 }
-.navbar-default {
-	background-color: black;
-	border-color: #12421f;
-	text-transform: uppercase;
-	font-size: 1.3em;
+
+.navbar-container {
+  width: 100%;
+  padding: 0 15px;
 }
+
+.navbar-header {
+  display: inline-block;
+}
+
+.navbar-header .navbar-brand {
+  color: white;
+  text-decoration: none;
+  padding: 15px 20px;
+}
+
+.navbar-nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.navbar-nav li {
+  display: inline-block;
+}
+
+.navbar-nav li a {
+  color: white;
+  text-decoration: none;
+  padding: 15px 20px;
+}
+
+.navbar-collapse {
+  display: none;
+}
+
+#navbar-toggle {
+  display: none;
+}
+
 
 /* Visión en dispositivos móviles */
 @media (max-width: 768px) {
@@ -153,5 +190,21 @@ table {
     font-size: 25px;
     margin-bottom: 10px;
   }
+  .navbar-collapse {
+    display: block;
+}
+
+#navbar-toggle {
+    display: inline-block;
+    /* Añade estilos adicionales si es necesario */
+}
+
+.navbar-nav {
+    display: none;
+}
+
+.navbar-nav.open {
+    display: block;
+}
 }
   

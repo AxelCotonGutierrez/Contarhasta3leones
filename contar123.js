@@ -134,5 +134,14 @@
       const playAgainButton = document.querySelector("#play-again-button");
       playAgainButton.addEventListener("click", restartGame);
 
-
+          // Navegaciòn"  
  
+          document.getElementById('navbar-toggle').addEventListener('click', function() {
+            var nav = document.querySelector('.navbar-nav');
+            if (nav.classList.contains('open')) {
+                nav.classList.remove('open');
+            } else {
+                nav.classList.add('open');
+            }
+        });
+        
