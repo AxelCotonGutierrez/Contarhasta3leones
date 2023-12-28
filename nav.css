@@ -10,7 +10,7 @@
     display: flex;
     padding-left: 0;
     border-bottom: 1px solid #12421f; /* Color del borde */
-    margin-bottom: 0; /* Asegurar que no haya margen en la parte inferior */
+    margin-bottom: 0; /* Asegura que no haya margen en la parte inferior */
 }
 
 .menu ul li {
@@ -18,6 +18,11 @@
     height: 100%;
     display: flex;
     align-items: center;
+    margin-right: 10px; /* Espacio adicional a la derecha de cada elemento */
+}
+
+.menu ul li:last-child {
+    margin-right: 0; /* Elimina el margen en el último ítem */
 }
 
 .menu ul li a {
@@ -27,10 +32,10 @@
     text-decoration: none;
     cursor: pointer;
     line-height: 40px;
-    color: white;
-    font-size: 1.3em;
+    color: white; /* Color del texto */
+    font-size: 1.2em;
     font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    padding: 0 10px;
+    padding: 0 10px; /* Padding dentro de los enlaces */
     text-transform: uppercase;
     height: 100%; /* Asegura que el enlace ocupe toda la altura del li */
 }
@@ -49,7 +54,7 @@
 .menu li ul li {
     width: auto; /* Ancho según el contenido */
     text-align: center;
-    background-color: black; /* Asegurar el fondo de los submenús */
+    background-color: black; /* Fondo de los submenús */
 }
 
 .menu li ul a {
@@ -69,6 +74,7 @@
 .menu li:hover a {
     color: white; /* Color del texto al pasar el ratón */
 }
+
 .menu ul li a img {
     max-height: 30px; /* Altura máxima de la imagen */
     width: auto; /* Mantiene la proporción de la imagen */
