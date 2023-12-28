@@ -27,7 +27,7 @@
     text-align: center;
     color: lightgray; /* Considerar cambiar para mejor visibilidad */
     font-size: 1.3em; /* Tamaño de fuente */
-    font-family: "Verdana";
+    font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif; /* Familia de fuentes actualizada */
     padding: 0 10px;
     text-transform: uppercase; /* Texto en mayúsculas */
 }
