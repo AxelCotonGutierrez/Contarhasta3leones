@@ -117,6 +117,11 @@ table {
   border-spacing: 10px; /* Ajusta el espacio como desees (por ejemplo, 10px) */
 }
 
+/* Estilos Personalizados para la Barra de Navegación */
+
+.navbar-nav > li > a {
+  font-size: 1.3em; /* Tamaño de la fuente para los enlaces en la barra de navegación */
+}
 
 /* Visión en dispositivos móviles */
 @media (max-width: 768px) {
@@ -143,8 +148,4 @@ table {
     margin-bottom: 10px;
   }
 }
-  /* Estilos Personalizados para la Barra de Navegación */
-
-  .navbar-nav > li > a {
-    font-size: 1.3em; /* Tamaño de la fuente para los enlaces en la barra de navegación */
-  }
+  
