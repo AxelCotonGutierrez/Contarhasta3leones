@@ -21,16 +21,18 @@
 }
 
 .menu ul li a {
-    display: block;
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
     text-decoration: none;
     cursor: pointer;
     line-height: 40px;
-    text-align: center;
-    color: white; /* Color del texto */
-    font-size: 1.3em; /* Tamaño de fuente */
-    font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif; /* Familia de fuentes actualizada */
+    color: white;
+    font-size: 1.3em;
+    font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
     padding: 0 10px;
-    text-transform: uppercase; /* Texto en mayúsculas */
+    text-transform: uppercase;
+    height: 100%; /* Asegura que el enlace ocupe toda la altura del li */
 }
 
 .menu li ul {
@@ -68,6 +70,6 @@
     color: white; /* Color del texto al pasar el ratón */
 }
 .menu ul li a img {
-    max-height: 30px; /* Ajusta esto según tus necesidades */
+    max-height: 30px; /* Altura máxima de la imagen */
     width: auto; /* Mantiene la proporción de la imagen */
 }
