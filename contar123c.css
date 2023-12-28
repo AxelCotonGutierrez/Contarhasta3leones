@@ -119,7 +119,7 @@ table {
 
 /* Estilos Personalizados para la Barra de Navegación */
 header {
-  margin-top: 0; /* Eliminar cualquier margen superior en el encabezado */
+  background-color: black;
 }
 
 /* Visión en dispositivos móviles */
