@@ -119,81 +119,7 @@ table {
 
 /* Estilos Personalizados para la Barra de Navegación */
 
-.mi-navbar {
-  background-color: #333;
-  color: white;
-  overflow: hidden;
-}
 
-.navbar-container {
-  width: 100%;
-  padding: 0 15px;
-}
-
-.navbar-header {
-  display: inline-block;
-}
-
-.navbar-header .navbar-brand {
-  color: white;
-  text-decoration: none;
-  padding: 15px 20px;
-}
-
-.navbar-nav {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-}
-
-.navbar-nav li {
-  display: inline-block;
-}
-
-.navbar-nav li a {
-  color: white;
-  text-decoration: none;
-  padding: 15px 20px;
-}
-
-.navbar-collapse {
-  display: none;
-}
-
-#navbar-toggle {
-  display: none;
-}
-
-.dropdown {
-  position: relative;
-}
-
-.dropdown .dropdown-toggle {
-  cursor: pointer;
-}
-
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  min-width: 180px;
-}
-
-.dropdown-menu a {
-  padding: 10px 15px;
-  color: black;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown-menu a:hover {
-  background-color: #ddd;
-}
 /* Visión en dispositivos móviles */
 @media (max-width: 768px) {
   .container {
@@ -218,30 +144,6 @@ table {
     font-size: 25px;
     margin-bottom: 10px;
   }
-  .navbar-collapse {
-    display: block;
-}
 
-#navbar-toggle {
-    display: inline-block;
-    /* Añade estilos adicionales si es necesario */
-}
-
-.navbar-nav {
-    display: none;
-}
-
-.navbar-nav.open {
-    display: block;
-}
-
-.navbar-nav.open .dropdown-menu {
-  position: static;
-  display: none;
-}
-
-.navbar-nav.open .dropdown:hover .dropdown-menu {
-  display: block;
-}
 }
   

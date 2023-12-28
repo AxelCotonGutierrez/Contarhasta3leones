@@ -136,34 +136,4 @@
 
           // Navegaciòn"  
  
-      document.getElementById('navbar-toggle').addEventListener('click', function() {
-          var nav = document.querySelector('.navbar-nav');
-          nav.classList.toggle('open');
-      });
-      
-      // JavaScript para menús desplegables
-      document.querySelectorAll('.dropdown-toggle').forEach(function(element) {
-          element.addEventListener('click', function(event) {
-              var dropdownMenu = this.nextElementSibling;
-              if (dropdownMenu.style.display === 'block') {
-                  dropdownMenu.style.display = 'none';
-              } else {
-                  dropdownMenu.style.display = 'block';
-              }
-              event.stopPropagation();
-          });
-      });
-      
-      // Cerrar los menús desplegables si se hace clic fuera de ellos
-      window.onclick = function(event) {
-          if (!event.target.matches('.dropdown-toggle')) {
-              var dropdownMenus = document.getElementsByClassName('dropdown-menu');
-              for (var i = 0; i < dropdownMenus.length; i++) {
-                  var openDropdown = dropdownMenus[i];
-                  if (openDropdown.style.display === 'block') {
-                      openDropdown.style.display = 'none';
-                  }
-              }
-          }
-      };
-        
+    
