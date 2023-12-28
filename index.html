@@ -7,25 +7,44 @@
 	<title>JUEGO DE LOS LEONES</title>
 	<link rel="stylesheet" href="contar123c.css">
 	<link rel="icon" href="icon.png" type="image/png">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<nav>
-		<ul style="background-color: black;">
-			<li><a href="/projects/Cursos/" style="color: white;">Cursos y Materias</a></li>
-			<li><a href="/projects/Niveles/" style="color: white;">Niveles</a></li>
-			<li><a href="/" style="color: white;">Entradas</a></li>
-			<li><a href="/tags" style="color: white;">Etiquetas</a></li>
-			<li><a href="/about" style="color: white;">Blog</a></li>
-			<li>
-				<a href="#" style="color: white;">Utilidades</a>
-				<ul style="background-color: black;">
-					<li><a href="/projects/Utilidades/Glosario.html" style="color: white;">Glosario</a></li>
-					<li><a href="/projects/Utilidades/Programacion.html" style="color: white;">Programación</a></li>
-					<li><a href="/projects/Utilidades/Soroban.html" style="color: white;">Soroban</a></li>
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-menu">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="https://axelcotongutierrez.github.io/learningmathematicas/">
+					<i class="fa fa-barcode"></i>
+				</a>
+			</div>
+	
+			<div class="collapse navbar-collapse" id="navbar-collapse-menu">
+				<ul class="nav navbar-nav">
+					<li><a href="/learningmathematicas/projects/Cursos/">Cursos y Materias</a></li>
+					<li><a href="/learningmathematicas/projects/Niveles/">Niveles</a></li>
+					<li><a href="/learningmathematicas/">Entradas</a></li>
+					<li><a href="/learningmathematicas/tags">Etiquetas</a></li>
+					<li><a href="/learningmathematicas/about">Blog</a></li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Utilidades <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="/learningmathematicas/projects/Utilidades/Glosario.html">Glosario</a></li>
+							<li><a href="/learningmathematicas/projects/Utilidades/Programacion.html">Programación</a></li>
+							<li><a href="/learningmathematicas/projects/Utilidades/Soroban.html">Soroban</a></li>
+						</ul>
+					</li>
 				</ul>
-			</li>
-		</ul>
+			</div>
+		</div>
 	</nav>
+	
 	<header><a href="https://axelcotongutierrez.github.io/learningmathematicas/">
 		<img src="https://axelcotongutierrez.github.io/learningmathematicas/assets/images//top.jpg" alt="Blog Mathematica" style="display: block; margin: 0 auto; width: 100%; height: auto;">
 	  </a></header>
