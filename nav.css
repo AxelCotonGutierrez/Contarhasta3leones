@@ -4,17 +4,18 @@
 }
 
 .menu ul {
-    list-style: none; /* Añadido para eliminar los puntos de la lista */
-    background-color: #6987BF;
+    list-style: none;
+    background-color: black; /* Color de fondo actualizado */
     height: 40px;
-    display: flex; /* Cambiado para usar flexbox */
-    padding-left: 0; /* Añadido para eliminar el padding por defecto de ul */
+    display: flex;
+    padding-left: 0;
+    border-bottom: 1px solid #12421f; /* Color del borde actualizado */
 }
 
 .menu ul li {
     height: 100%;
-    display: flex; /* Usado flexbox aquí también */
-    align-items: center; /* Alinea verticalmente el texto */
+    display: flex;
+    align-items: center;
 }
 
 .menu ul li a {
@@ -23,10 +24,11 @@
     cursor: pointer;
     line-height: 40px;
     text-align: center;
-    color: lightgray;
-    font-size: 14px;
+    color: lightgray; /* Considera cambiar este color para mejor visibilidad */
+    font-size: 1.3em; /* Tamaño de fuente actualizado */
     font-family: "Verdana";
-    padding: 0 10px; /* Añadido padding a izquierda y derecha */
+    padding: 0 10px;
+    text-transform: uppercase; /* Transformación del texto a mayúsculas */
 }
 
 .menu li ul li {
