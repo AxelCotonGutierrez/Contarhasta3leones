@@ -122,6 +122,12 @@ table {
 .navbar-nav > li > a {
   font-size: 1.3em; /* Tamaño de la fuente para los enlaces en la barra de navegación */
 }
+.navbar-default {
+	background-color: black;
+	border-color: #12421f;
+	text-transform: uppercase;
+	font-size: 1.3em;
+}
 
 /* Visión en dispositivos móviles */
 @media (max-width: 768px) {
