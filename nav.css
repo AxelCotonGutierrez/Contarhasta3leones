@@ -5,14 +5,15 @@
 
 .menu ul {
     list-style: none;
-    background-color: black; /* Color de fondo actualizado */
+    background-color: black; /* Color de fondo */
     height: 40px;
     display: flex;
     padding-left: 0;
-    border-bottom: 1px solid #12421f; /* Color del borde actualizado */
+    border-bottom: 1px solid #12421f; /* Color del borde */
 }
 
 .menu ul li {
+    position: relative; /* Posicionamiento relativo para los submenús */
     height: 100%;
     display: flex;
     align-items: center;
@@ -24,41 +25,43 @@
     cursor: pointer;
     line-height: 40px;
     text-align: center;
-    color: white; /* Considera cambiar este color para mejor visibilidad */
-    font-size: 1.3em; /* Tamaño de fuente actualizado */
+    color: lightgray; /* Considerar cambiar para mejor visibilidad */
+    font-size: 1.3em; /* Tamaño de fuente */
     font-family: "Verdana";
     padding: 0 10px;
-    text-transform: uppercase; /* Transformación del texto a mayúsculas */
+    text-transform: uppercase; /* Texto en mayúsculas */
+}
+
+.menu li ul {
+    display: none;
+    position: absolute; /* Posicionamiento absoluto para los submenús */
+    background-color: gray; /* Fondo de los submenús */
+    width: auto; /* Ancho según el contenido */
+    left: 0; /* Alinear a la izquierda del ítem del menú */
+    top: 40px; /* Ubicar debajo del ítem del menú */
+    white-space: nowrap; /* Evitar el salto de línea */
+    z-index: 1000; /* Z-index para sobreponer sobre otros elementos */
 }
 
 .menu li ul li {
-    width: auto; /* Ajusta el ancho automáticamente */
+    width: auto; /* Ancho según el contenido */
     text-align: center;
 }
 
 .menu li ul a {
     line-height: 40px;
-    color: gray;
-}
-
-.menu li ul {
-    display: none;
-    position: absolute; /* Cambiado a absolute para el submenú */
-    z-index: 1;
-    background-color: gray;
-    width: auto; /* Ajusta el ancho automáticamente */
-    left: 0;
-    top: 40px; /* Ajusta la posición debajo del elemento principal */
+    color: gray; /* Color del texto en submenús */
+    padding: 10px 20px; /* Padding para enlaces de submenús */
 }
 
 .menu li ul li:hover {
-    background-color: black;
+    background-color: #6987BF; /* Color al pasar el ratón */
 }
 
-.menu li:hover ul {
-    display: block;
+.menu li:hover > ul {
+    display: block; /* Mostrar submenús al pasar el ratón */
 }
 
 .menu li:hover a {
-    color: white;
+    color: white; /* Color del texto al pasar el ratón */
 }
