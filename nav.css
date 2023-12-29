@@ -85,9 +85,18 @@ header {
     background-color: black;
   }
 
+  .menu-toggle {
+    display: none; /* Oculto por defecto */
+    font-size: 1.5em;
+    background: none;
+    border: none;
+    color: white; /* Color del botón hamburguesa */
+}
+
   @media (max-width: 768px) {
     /* Colapsa la barra de navegación en dispositivos móviles */
     .menu ul {
+        display: none;
         flex-direction: column; /* Los elementos se apilan verticalmente */
         align-items: flex-start; /* Alinea los elementos al inicio */
         height: auto; /* Ajusta la altura automáticamente */
@@ -112,5 +121,13 @@ header {
         padding-left: 20px; /* Agrega un poco de padding para los submenús */
     }
 
-    
+  
+    .menu-toggle {
+        display: block; /* Muestra el botón en dispositivos móviles */
+    }
+
+    /* Estilos para cuando el menú esté activo */
+    .menu.active ul {
+        display: flex; /* Muestra la lista cuando el menú esté activo */
+    }
 }
