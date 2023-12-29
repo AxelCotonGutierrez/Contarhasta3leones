@@ -93,16 +93,14 @@ header {
 }
 
 @media (max-width: 768px) {
+    /* Estilos para la barra de navegación en modo móvil */
     .menu ul {
         display: none; /* El menú debe estar oculto inicialmente en móviles */
         flex-direction: column; /* Los elementos se apilan verticalmente */
-        align-items: flex-start; /* Alinea los elementos al inicio */
-        height: auto; /* Ajusta la altura automáticamente */
     }
 
     .menu ul li {
         width: 100%; /* Hace que cada ítem ocupe el ancho completo */
-        margin-right: 0; /* Elimina el margen derecho en móviles */
     }
 
     .menu ul li a {
@@ -114,15 +112,18 @@ header {
     .menu li ul {
         position: static; /* Posicionamiento estándar para submenús */
         display: none; /* Inicialmente oculto */
-        width: 100%; /* Ocupa el ancho completo del elemento padre */
+        width: 100%; /* Ocupa el ancho completo */
+        padding-left: 20px; /* Añade un poco de padding a la izquierda */
     }
 
-    .menu li:hover > ul, .menu li.active > ul {
-        display: block; /* Muestra el submenú en interacción */
+    .menu li.active > ul, 
+    .menu li:hover > ul {
+        display: flex; /* Muestra el submenú en interacción */
+        flex-direction: column; /* Los submenús se apilan verticalmente */
     }
 
     .menu li ul li {
-        padding-left: 20px; /* Agrega un poco de padding para los submenús */
+        width: 100%; /* Los submenús ocupan el ancho completo */
     }
 
     .menu-toggle {
@@ -139,3 +140,4 @@ header {
         display: flex; /* Muestra la lista cuando el menú esté activo */
     }
 }
+
