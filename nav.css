@@ -97,6 +97,7 @@ header {
     .menu ul {
         display: none; /* El menú debe estar oculto inicialmente en móviles */
         flex-direction: column; /* Los elementos se apilan verticalmente */
+        background-color: black; /* Fondo para el menú principal */
     }
 
     .menu ul li {
@@ -107,6 +108,7 @@ header {
         justify-content: flex-start; /* Alinea el contenido a la izquierda */
         padding: 10px; /* Ajusta el padding para los enlaces */
         font-size: 1em; /* Ajusta el tamaño de la fuente para móviles */
+        color: white; /* Color del texto */
     }
 
     .menu li ul {
@@ -114,30 +116,35 @@ header {
         display: none; /* Inicialmente oculto */
         width: 100%; /* Ocupa el ancho completo */
         padding-left: 20px; /* Añade un poco de padding a la izquierda */
+        background-color: transparent; /* Fondo transparente por defecto */
     }
 
-    .menu li.active > ul, 
+    .menu li.active > ul,
     .menu li:hover > ul {
-        display: flex; /* Muestra el submenú en interacción */
-        flex-direction: column; /* Los submenús se apilan verticalmente */
+        display: block; /* Muestra el submenú en interacción */
+        background-color: black; /* Fondo negro solo cuando está activo */
     }
 
     .menu li ul li {
-        width: 100%; /* Los submenús ocupan el ancho completo */
+        display: none; /* Los submenús están ocultos por defecto */
+    }
+
+    .menu li.active ul li,
+    .menu li:hover ul li {
+        display: block; /* Los submenús se muestran cuando el ítem padre está activo */
     }
 
     .menu-toggle {
         display: block; /* Muestra el botón en dispositivos móviles */
     }
 
-    /* Opcionalmente, puedes ocultar la imagen en dispositivos móviles si lo deseas */
-    .menu ul li a img {
-        display: none;
-    }
-
-    /* Estilos para cuando el menú esté activo */
     .menu.active ul {
         display: flex; /* Muestra la lista cuando el menú esté activo */
     }
+
+    .menu ul li a img {
+        display: none; /* Opcionalmente, oculta la imagen en dispositivos móviles */
+    }
 }
+
 
