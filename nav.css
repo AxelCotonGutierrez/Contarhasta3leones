@@ -18,8 +18,7 @@
     height: 100%;
     display: flex;
     align-items: center;
-    margin-right: 10px;
-    margin-bottom: 0; /* Espacio adicional a la derecha de cada elemento */
+    margin-right: 10px; /* Espacio adicional a la derecha de cada elemento */
 }
 
 .menu ul li:last-child {
@@ -80,12 +79,12 @@
     max-height: 30px; /* Altura máxima de la imagen */
     width: auto; /* Mantiene la proporción de la imagen */
 }
-/* Estilos Personalizados para la Barra de Navegación */
+
 header {
     background-color: black;
-  }
+}
 
-  .menu-toggle {
+.menu-toggle {
     display: none; /* Oculto por defecto */
     font-size: 1.5em;
     background: none;
@@ -93,10 +92,9 @@ header {
     color: white; /* Color del botón hamburguesa */
 }
 
-  @media (max-width: 768px) {
-    /* Colapsa la barra de navegación en dispositivos móviles */
+@media (max-width: 768px) {
     .menu ul {
-        display: none;
+        display: none; /* El menú debe estar oculto inicialmente en móviles */
         flex-direction: column; /* Los elementos se apilan verticalmente */
         align-items: flex-start; /* Alinea los elementos al inicio */
         height: auto; /* Ajusta la altura automáticamente */
@@ -115,15 +113,25 @@ header {
 
     .menu li ul {
         position: static; /* Posicionamiento estándar para submenús */
+        display: none; /* Inicialmente oculto */
+        width: 100%; /* Ocupa el ancho completo del elemento padre */
+    }
+
+    .menu li:hover > ul, .menu li.active > ul {
+        display: block; /* Muestra el submenú en interacción */
     }
 
     .menu li ul li {
         padding-left: 20px; /* Agrega un poco de padding para los submenús */
     }
 
-  
     .menu-toggle {
         display: block; /* Muestra el botón en dispositivos móviles */
+    }
+
+    /* Opcionalmente, puedes ocultar la imagen en dispositivos móviles si lo deseas */
+    .menu ul li a img {
+        display: none;
     }
 
     /* Estilos para cuando el menú esté activo */
