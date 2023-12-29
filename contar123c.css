@@ -49,10 +49,18 @@ h1 {
 }
 
 .textosuperior {
-  font-size: 30px;
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 25px;
   justify-content: center;
   align-items: center;
 }
+.pregunta {
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
 
 .msj {
   font-size: 30px;
