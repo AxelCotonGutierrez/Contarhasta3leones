@@ -84,3 +84,33 @@
 header {
     background-color: black;
   }
+
+  @media (max-width: 768px) {
+    /* Colapsa la barra de navegación en dispositivos móviles */
+    .menu ul {
+        flex-direction: column; /* Los elementos se apilan verticalmente */
+        align-items: flex-start; /* Alinea los elementos al inicio */
+        height: auto; /* Ajusta la altura automáticamente */
+    }
+
+    .menu ul li {
+        width: 100%; /* Hace que cada ítem ocupe el ancho completo */
+        margin-right: 0; /* Elimina el margen derecho en móviles */
+    }
+
+    .menu ul li a {
+        justify-content: flex-start; /* Alinea el contenido a la izquierda */
+        padding: 10px; /* Ajusta el padding para los enlaces */
+        font-size: 1em; /* Ajusta el tamaño de la fuente para móviles */
+    }
+
+    .menu li ul {
+        position: static; /* Posicionamiento estándar para submenús */
+    }
+
+    .menu li ul li {
+        padding-left: 20px; /* Agrega un poco de padding para los submenús */
+    }
+
+    
+}
