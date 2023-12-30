@@ -7,9 +7,9 @@
 }
 
 body {
-  max-height:80%;
   text-align: center;
   color: #0c4fe1;
+  height: 100%; 
 }
 
 h1 {

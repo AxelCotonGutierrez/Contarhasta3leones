@@ -93,9 +93,9 @@ header {
 }
 
 .footer {
-    position: relative;
+    position: bottom;
     margin-top: 0;
-    height: 4em;
+    height: 5em;
     text-align: center;
     bottom: 0;
     width: 100%;
@@ -105,7 +105,8 @@ header {
 .footer-links {
     margin: 0;
     padding: 1em;
-    padding-bottom: 1sem;
+    padding-bottom: 2em;
+    padding-top: 1em;
     list-style: none; /* Elimina los estilos predeterminados de la lista */
     display: flex; /* Usa flexbox para alinear los elementos */
     justify-content: right; /* Alinea los elementos a la derecha */
@@ -115,6 +116,7 @@ header {
 .footer-links > li {
     padding: 0 1em; /* Ajusta el espacio entre los íconos */
 }
+
 
 
 @media (max-width: 768px) {
