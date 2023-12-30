@@ -54,6 +54,8 @@ h1 {
   justify-content: center;
   align-items: center;
   color:black;
+  padding-right: 0.5em;
+  padding-left: 0.5em;
 }
 .pregunta {
   font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
