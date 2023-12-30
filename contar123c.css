@@ -19,8 +19,8 @@ h1 {
 }
 
 .container {
-  background-color: #ddff62;
-  max-width: 95%;
+  background-color: none;
+  max-width: 80%;
   margin: auto;
   border: 3px solid #EABE3F;
   border-radius: 20px;
@@ -34,8 +34,8 @@ h1 {
 }
 
 .container2 {
-  background-color: #f0f3e9;
-  max-width: 95%;
+  background-color: none;
+  max-width: 80%;
   margin: auto;
   border: 3px solid #EABE3F;
   border-radius: 20px;
@@ -50,14 +50,14 @@ h1 {
 
 .textosuperior {
   font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 25px;
+  font-size: 20px;
   justify-content: center;
   align-items: center;
   color:black;
 }
 .pregunta {
   font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 20px;
+  font-size: 35px;
   justify-content: center;
   align-items: center;
 }
@@ -80,7 +80,7 @@ h1 {
   margin-bottom: 20px;
   border-radius: 50%;
   cursor: pointer;
-  background-color: #000;
+  background-color: #4285f4;
   color: white;
   display: inline-flex;
   flex-wrap: nowrap;
@@ -130,8 +130,8 @@ table {
 
 /* Visión en dispositivos móviles */
 @media (max-width: 768px) {
-  .container {
-    max-width: 100%; /* Ancho completo en dispositivos móviles */
+  .container, .container2 {
+    max-width: 80%; /* Ancho completo en dispositivos móviles */
     flex-wrap: wrap; /* Permitir envolver las imágenes en múltiples líneas */
   }
 
@@ -147,11 +147,13 @@ table {
   }
 
   .guess-button {
-    width: 50px;
-    height: 50px;
-    font-size: 25px;
-    margin-bottom: 10px;
+      width: 50px;
+      height: 50px;
+      font-size: 25px;
+      margin-bottom: 10px;
   }
 
+  .pregunta {
+      font-size: 30px;
+  }
 }
-  

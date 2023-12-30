@@ -92,6 +92,28 @@ header {
     color: white; /* Color del botón hamburguesa */
 }
 
+.footer {
+    position: relative;
+    padding: 2em;
+    height: auto;
+    text-align: center;
+	bottom: 0;
+	width: 100%;
+	background-color: black;
+}
+
+.footer-links {
+	margin: 0 0 0 0em;
+	padding: 0;
+	float: right;
+	text-align: right;
+}
+
+.footer-links>li {
+	padding-right: 1em;
+	display: inline-block;
+}
+
 @media (max-width: 768px) {
     /* Estilos para la barra de navegación en modo móvil */
     .menu ul {
