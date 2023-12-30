@@ -104,10 +104,11 @@ header {
 
 .footer-links {
     margin: 0;
-    padding: 1em; /* Añade padding arriba y abajo para centrar verticalmente */
+    padding: 1em;
+    padding-bottom: 1sem;
     list-style: none; /* Elimina los estilos predeterminados de la lista */
     display: flex; /* Usa flexbox para alinear los elementos */
-    justify-content: flex-end; /* Alinea los elementos a la derecha */
+    justify-content: right; /* Alinea los elementos a la derecha */
     align-items: center; /* Centra los elementos verticalmente */
 }
 

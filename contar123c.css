@@ -60,6 +60,8 @@ h1 {
   font-size: 35px;
   justify-content: center;
   align-items: center;
+  padding-right: 0.5em;
+  padding-left: 0.5em;
 }
 
 
