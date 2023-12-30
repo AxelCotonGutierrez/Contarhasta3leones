@@ -113,11 +113,16 @@ header {
     align-items: center; /* Centra los elementos verticalmente */
 }
 
-.footer-links > li {
-    padding: 0 1em; /* Ajusta el espacio entre los íconos */
+.footer-links li {
+    display: inline-block; /* Muestra los elementos de la lista en línea */
+    margin-right: 10px; /* Añade espacio entre los elementos de la lista */
 }
 
-
+.footer img {
+    max-width: 100%; /* Asegura que la imagen no sea más ancha que su contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    width: 50px; /* Ajusta esto para controlar el tamaño de la imagen */
+}
 
 @media (max-width: 768px) {
     /* Estilos para la barra de navegación en modo móvil */
