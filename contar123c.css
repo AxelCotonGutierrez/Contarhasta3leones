@@ -94,10 +94,10 @@ h1 {
 
 #play-again-button {
   background-color: #4285f4;
+  border: 2px solid #000;
   color: #fff;
   padding: 10px 20px;
   font-size: 16px;
-  border: none;
   border-radius: 5px;
   cursor: pointer;
   margin-top: 20px;
