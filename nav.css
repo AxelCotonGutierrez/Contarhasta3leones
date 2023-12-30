@@ -94,25 +94,27 @@ header {
 
 .footer {
     position: relative;
-    padding: 2em;
-    height: auto;
+    margin-top: 0;
+    height: 4em;
     text-align: center;
-	bottom: 0;
-	width: 100%;
-	background-color: black;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
 }
 
 .footer-links {
-	margin: 0 0 0 0em;
-	padding: 0;
-	float: right;
-	text-align: right;
+    margin: 0;
+    padding: 1em; /* Añade padding arriba y abajo para centrar verticalmente */
+    list-style: none; /* Elimina los estilos predeterminados de la lista */
+    display: flex; /* Usa flexbox para alinear los elementos */
+    justify-content: flex-end; /* Alinea los elementos a la derecha */
+    align-items: center; /* Centra los elementos verticalmente */
 }
 
-.footer-links>li {
-	padding-right: 1em;
-	display: inline-block;
+.footer-links > li {
+    padding: 0 1em; /* Ajusta el espacio entre los íconos */
 }
+
 
 @media (max-width: 768px) {
     /* Estilos para la barra de navegación en modo móvil */
