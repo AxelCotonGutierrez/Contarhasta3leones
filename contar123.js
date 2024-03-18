@@ -1,19 +1,41 @@
 // Axel Cotón Gutiérrez Copyright 2023
-      // Generar imágenes aleatorias
-      const images = [
+
+// Cargar archivos de audio desde la carpeta adecuada
+const preguntaLeonesAudio = new Audio('audio/PreguntaLeones.mp3');
+const correctoAudio = new Audio('audio/Correcto.mp3');
+const incorrectoAudio = new Audio('audio/Incorrecto.mp3');
+const felicidadesAudio = new Audio('audio/Felicidades.mp3');
+const intentarAudio = new Audio('audio/Intentar.mp3');
+
+// Acceder al botón de silencio y al icono del megáfono en el DOM
+const soundControl = document.querySelector('#sound-control');
+const megaphoneIcon = document.querySelector('#megaphone-icon');
+
+// Función para reproducir audio si el sonido está activado
+function playAudio(audioElement) {
+  if (soundControl.checked) {
+    audioElement.play();
+  }
+}
+
+// Evento clic para el icono del megáfono para reproducir la pregunta en audio
+megaphoneIcon.addEventListener('click', () => playAudio(preguntaLeonesAudio));
+
+// Generar imágenes aleatorias
+  const images = [
         "https://raw.githubusercontent.com/AxelCotonGutierrez/Contarhasta3leones/master/img/leon.png",
         "https://raw.githubusercontent.com/AxelCotonGutierrez/Contarhasta3leones/master/img/leon.png",
         "https://raw.githubusercontent.com/AxelCotonGutierrez/Contarhasta3leones/master/img/leon.png"
       ];
     
-      let score = 0; // Contador de respuestas correctas
-      let questionsCount = 0; // Contador de preguntas realizadas
-      let previousNumImages = -1; // Variable para almacenar el número de imágenes de la pregunta anterior
+  let score = 0; // Contador de respuestas correctas
+  let questionsCount = 0; // Contador de preguntas realizadas
+  let previousNumImages = -1; // Variable para almacenar el número de imágenes de la pregunta anterior
     
-      // Función para restablecer los resultados y mensajes del juego anterior
-      function resetGame() {
-        const scoreElement = document.querySelector("#score");
-        const resultElement = document.querySelector("#result");
+// Función para restablecer los resultados y mensajes del juego anterior
+  function resetGame() {
+  const scoreElement = document.querySelector("#score");
+  const resultElement = document.querySelector("#result");
     
         scoreElement.textContent = "";
         resultElement.textContent = "";
@@ -21,126 +43,131 @@
         resultElement.style.color = "initial";
       }
     
-      function generateQuestion() {
-        resetGame(); // Restablecer resultados y mensajes del juego anterior
+  function generateQuestion() {
+    resetGame(); // Restablecer resultados y mensajes del juego anterior
     
-        // Verificar si se han realizado las 5 preguntas
-        if (questionsCount >= 5) {
-          const scoreElement = document.querySelector("#score");
-          scoreElement.textContent = `\u00A1Fin!`;
+// Verificar si se han realizado las 5 preguntas
+  if (questionsCount >= 5) {
+     const scoreElement = document.querySelector("#score");
+     scoreElement.textContent = `\u00A1Fin!`;
     
-          if (score === 5) {
-            scoreElement.textContent += ` \u00A1Felicidades, eres un/a campeón/a!`;
-            scoreElement.style.color = "green";
-          } else {
-            scoreElement.textContent += ` \u00A1Vuelve a intentarlo!`;
-            scoreElement.style.color = "red";
+  if (score === 5) {
+     scoreElement.textContent += ` \u00A1Felicidades, lo has conseguido!`;
+     scoreElement.style.color = "green";
+     playAudio(felicidadesAudio);
+    } else {
+     scoreElement.textContent += ` \u00A1Vuelve a intentarlo!`;
+     scoreElement.style.color = "red";
+     playAudio(intentarAudio);
           }
     
-          // Mostrar botón "Volver a jugar"
-          const playAgainButton = document.querySelector("#play-again-button");
-          playAgainButton.style.display = "block";
+// Mostrar botón "Volver a jugar"
+  const playAgainButton = document.querySelector("#play-again-button");
+  playAgainButton.style.display = "block";
     
-          return;
-        }
+  return;
+  }
     
-        let numImages = generateRandomNumImages();
+  let numImages = generateRandomNumImages();
     
-        while (numImages === previousNumImages) {
+    while (numImages === previousNumImages) {
           numImages = generateRandomNumImages();
         }
     
-        previousNumImages = numImages;
+    previousNumImages = numImages;
     
-        // Generar imágenes aleatorias para la pregunta actual
-        const chosenImages = [];
+// Generar imágenes aleatorias para la pregunta actual
+  const chosenImages = [];
     
-        for (let i = 0; i < numImages; i++) {
-          const randomIndex = Math.floor(Math.random() * images.length);
-          const image = document.createElement("img");
-          image.src = images[randomIndex];
-          image.alt = "Imagen";
-          image.classList.add("game-image"); // Agregar la clase "game-image" a las imágenes
-          chosenImages.push(image);
-        }
+  for (let i = 0; i < numImages; i++) {
+     const randomIndex = Math.floor(Math.random() * images.length);
+     const image = document.createElement("img");
+     image.src = images[randomIndex];
+     image.alt = "Imagen";
+     image.classList.add("game-image"); // Agregar la clase "game-image" a las imágenes
+     chosenImages.push(image);
+       }
     
-        // Mostrar imágenes en el HTML
-        const imageContainer = document.querySelector("#image-container");
-        imageContainer.innerHTML = ""; // Limpiar el contenedor de imágenes
+// Mostrar imágenes en el HTML
+  const imageContainer = document.querySelector("#image-container");
+  imageContainer.innerHTML = ""; // Limpiar el contenedor de imágenes
     
-        chosenImages.forEach((image) => {
-          imageContainer.appendChild(image);
-        });
+  chosenImages.forEach((image) => {
+     imageContainer.appendChild(image);
+  });
     
-        // Pedir al jugador que adivine
-        const guessButtons = document.querySelectorAll(".guess-button");
+// Pedir al jugador que adivine
+  const guessButtons = document.querySelectorAll(".guess-button");
     
-        // Eliminar eventos click anteriores
-        guessButtons.forEach((button) => {
-          button.removeEventListener("click", handleGuess);
-        });
+// Eliminar eventos click anteriores
+  guessButtons.forEach((button) => {
+     button.removeEventListener("click", handleGuess);
+  });
     
-        // Asignar eventos click nuevos
-        guessButtons.forEach((button) => {
-          button.addEventListener("click", handleGuess);
-        });
-      }
+// Asignar eventos click nuevos
+  guessButtons.forEach((button) => {
+    button.addEventListener("click", handleGuess);
+     });
+  }
     
-      function generateRandomNumImages() {
-        return Math.floor(Math.random() * 3) + 1;
-      }
+  function generateRandomNumImages() {
+  return Math.floor(Math.random() * 3) + 1;
+  }
     
-      function handleGuess(event) {
-        const guess = parseInt(event.target.textContent);
-        const resultElement = document.querySelector("#result");
-        questionsCount++;
+ function handleGuess(event) {
+  const guess = parseInt(event.target.textContent);
+  const resultElement = document.querySelector("#result");
+  questionsCount++;
     
-        const numImages = document.querySelectorAll("#image-container img").length;
+  const numImages = document.querySelectorAll("#image-container img").length;
     
-        if (guess === numImages) {
-          score++;
-          resultElement.textContent = "\u00A1Correcto!";
-          resultElement.style.color = "green";
-        } else {
-          resultElement.textContent = `Incorrecto, había ${numImages} imágenes.`;
-          resultElement.style.color = "red";
-        }
+  if (guess === numImages) {
+    score++;
+    resultElement.textContent = "\u00A1Correcto!";
+    resultElement.style.color = "green";
+    playAudio(correctoAudio);
+   } else {
+    resultElement.textContent = `Incorrecto, había ${numImages} imágenes.`;
+    resultElement.style.color = "red";
+    playAudio(incorrectoAudio);
+  }
     
-        // Actualizar puntaje y generar la siguiente pregunta
-        const scoreElement = document.querySelector("#score");
-        scoreElement.textContent = ` ${score} respuestas correctas de ${questionsCount}`;
+// Actualizar puntaje y generar la siguiente pregunta
+  const scoreElement = document.querySelector("#score");
+  scoreElement.textContent = ` ${score} respuestas correctas de ${questionsCount}`;
     
-        setTimeout(generateQuestion, 1000);
-      }
+  setTimeout(generateQuestion, 1000);
+ }
     
-      function restartGame() {
-        // Restablecer variables de juego
-        score = 0;
-        questionsCount = 0;
-        previousNumImages = -1;
-    
-        // Ocultar botón "Volver a jugar"
-        const playAgainButton = document.querySelector("#play-again-button");
-        playAgainButton.style.display = "none";
-    
-        // Reiniciar el juego
-        generateQuestion();
-      }
-    
-      // Llamar a la función para iniciar el juego
-      generateQuestion();
-      
-      // Agregar evento clic al botón "Volver a jugar"
-      const playAgainButton = document.querySelector("#play-again-button");
-      playAgainButton.addEventListener("click", restartGame);
+ function restartGame() {
 
-          // Navegaciòn"  
+// Restablecer variables de juego
+    score = 0;
+    questionsCount = 0;
+    previousNumImages = -1;
+    
+// Ocultar botón "Volver a jugar"
+    const playAgainButton = document.querySelector("#play-again-button");
+    playAgainButton.style.display = "none";
+    
+// Reiniciar el juego
+    generateQuestion();
+      }
+    
+// Llamar a la función para iniciar el juego
+    generateQuestion();
+      
+// Agregar evento clic al botón "Volver a jugar"
+  const playAgainButton = document.querySelector("#play-again-button");
+  playAgainButton.addEventListener("click", restartGame);
+
+// Navegaciòn"  
  
-          document.addEventListener('DOMContentLoaded', function() {
-            var menuToggle = document.querySelector('.menu-toggle');
-            var menu = document.querySelector('.menu');
+    document.addEventListener('DOMContentLoaded', function() {
+      var menuToggle = document.querySelector('.menu-toggle');
+      var menu = document.querySelector('.menu');
         
-            menuToggle.addEventListener('click', function() {
-                menu.classList.toggle('active');
-            });
-        });
+      menuToggle.addEventListener('click', function() {
+          menu.classList.toggle('active');
+       });
+  });
