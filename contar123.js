@@ -1,7 +1,7 @@
 // Axel Cotón Gutiérrez Copyright 2023
 
 // Cargar archivos de audio desde la carpeta adecuada
-const preguntaLeonesAudio = new Audio('audio/PreguntaLeones.mp3');
+const preguntaLeonesAudio = new Audio('https://raw.githubusercontent.com/AxelCotonGutierrez/Contarhasta3leones/master/audio/PreguntaLeones.mp3');
 const correctoAudio = new Audio('audio/Correcto.mp3');
 const incorrectoAudio = new Audio('audio/Incorrecto.mp3');
 const felicidadesAudio = new Audio('audio/Felicidades.mp3');
