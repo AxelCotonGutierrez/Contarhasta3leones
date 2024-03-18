@@ -2,10 +2,10 @@
 
 // Cargar archivos de audio desde la carpeta adecuada
 const preguntaLeonesAudio = new Audio('https://raw.githubusercontent.com/AxelCotonGutierrez/Contarhasta3leones/master/audio/PreguntaLeones.mp3');
-const correctoAudio = new Audio('audio/Correcto.mp3');
-const incorrectoAudio = new Audio('audio/Incorrecto.mp3');
-const felicidadesAudio = new Audio('audio/Felicidades.mp3');
-const intentarAudio = new Audio('audio/Intentar.mp3');
+const correctoAudio = new Audio('https://raw.githubusercontent.com/AxelCotonGutierrez/Contarhasta3leones/master/audio/Correcto.mp3');
+const incorrectoAudio = new Audio('https://raw.githubusercontent.com/AxelCotonGutierrez/Contarhasta3leones/master/audio/Incorrecto.mp3');
+const felicidadesAudio = new Audio('https://raw.githubusercontent.com/AxelCotonGutierrez/Contarhasta3leones/master/audio/Felicidades.mp3');
+const intentarAudio = new Audio('https://raw.githubusercontent.com/AxelCotonGutierrez/Contarhasta3leones/master/audio/Intentar.mp3');
 
 // Acceder al botón de silencio y al icono del megáfono en el DOM
 const soundControl = document.querySelector('#sound-control');
