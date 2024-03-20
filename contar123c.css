@@ -125,10 +125,7 @@ h1 {
   font-weight: bold;
 }
 
-table {
-  border-collapse: separate; /* Asegura un espacio entre las celdas */
-  border-spacing: 10px; /* Ajusta el espacio como desees (por ejemplo, 10px) */
-}
+
 
 
 
