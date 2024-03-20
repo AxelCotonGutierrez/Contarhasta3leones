@@ -13,6 +13,10 @@ Puedes probar el juego en esta url:
 
 https://axelcotongutierrez.github.io/Contarhasta3leones/
 
+Para saber como jugar solo ver la sección correspondiente en nuestro Canal de Youtube:
+
+https://www.youtube.com/watch?v=mwAQOOgombI
+
 ¡Bienvenido al desafiante juego "Contando Leones"!
 
 En este divertido y educativo juego, pondrás a prueba tus habilidades de conteo mientras te sumerges en un fascinante mundo de leones. Tu misión es contar con precisión cuántos leones aparecen en cada escena y seleccionar el botón correspondiente para dar tu respuesta.
