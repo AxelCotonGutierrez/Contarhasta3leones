@@ -9,6 +9,7 @@
 	<link rel="stylesheet" href="nav.css">
 	<link rel="icon" href="icon.png" type="image/png">
 	<script src="https://axelcotongutierrez.github.io/learningmathematicas/assets/js/header.js"></script>
+	
 </head>
 <body>
 	<header>
@@ -55,7 +56,7 @@
 			<b><a href="https://youtu.be/mwAQOOgombI?si=BjEq2lr8S0m7PzeV" target="_blank">¿Cómo jugar?</a></b>
 			
 			</p>
-			<p id="contador">Han jugado 0 personas.</p>
+			<p id="contador">Han jugado 0 veces.</p>
 	<script src="contar123.js"></script>
 	<!-- Llamamos a Java"-->
 	<br>
@@ -67,6 +68,27 @@
 			<li><a href="https://www.youtube.com/@learningmathematicas"> <img src="youtubeinverseicon.jpg"></i></a></li>
 		</ul>
 	</footer>
+	<!-- Incluimos las bibliotecas de Firebase -->
+	<script src="https://www.gstatic.com/firebasejs/9.6.8/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/9.6.8/firebase-database.js"></script>
+  
+	<script>
+	  // Configuración de Firebase proporcionada
+	  const firebaseConfig = {
+		apiKey: "AIzaSyAE3Un38AeJrWtH83ndmXLNSKKFoKQI7K8",
+		authDomain: "contador-de-juegos.firebaseapp.com",
+		databaseURL: "https://contador-de-juegos-default-rtdb.europe-west1.firebasedatabase.app",
+		projectId: "contador-de-juegos",
+		storageBucket: "contador-de-juegos.appspot.com",
+		messagingSenderId: "811452306589",
+		appId: "1:811452306589:web:c0ceaada6ebdebb6d27074",
+		measurementId: "G-QGKEEYVRTR"
+	  };
+  
+	  // Inicializar Firebase
+	  const app = firebase.initializeApp(firebaseConfig);
+	  const database = firebase.database();
+	</script>
 </body>
 
 </html>

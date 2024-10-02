@@ -43,21 +43,28 @@ function resetGame() {
   resultElement.style.color = "initial";
 }
 
-// Función para actualizar el contador usando CountAPI
-function actualizarContador() {
-  const url = 'https://api.countapi.xyz/hit/mi-juego-de-leones/jugadores';
-  fetch(url)
-    .then(response => response.json())
-    .then(data => {
-      document.getElementById('contador').innerText = `Han jugado ${data.value} veces.`;
-    })
-    .catch(err => console.log('Error al actualizar el contador:', err));
+// Función para incrementar el contador del juego en Firebase
+function incrementarContador() {
+  const juegoId = window.location.pathname.split("/").pop().replace(".html", "");
+  const contadorRef = firebase.database().ref(`jugadores/${juegoId}/contador`);
+  contadorRef.transaction(function(contador) {
+    return (contador || 0) + 1;
+  });
 }
 
-// Llamamos a la función para mostrar el contador actual al cargar la página
-actualizarContador();
+// Función para mostrar el contador actual en la página
+function mostrarContador() {
+  const juegoId = window.location.pathname.split("/").pop().replace(".html", "");
+  const contadorRef = firebase.database().ref(`jugadores/${juegoId}/contador`);
+  contadorRef.on('value', (snapshot) => {
+    const contador = snapshot.val();
+    document.getElementById('contador').innerText = `Han jugado ${contador || 0} veces.`;
+  });
+}
 
-// Función para generar una pregunta
+// Mostrar el contador al cargar la página
+mostrarContador();
+
 function generateQuestion() {
   resetGame(); // Restablecer resultados y mensajes del juego anterior
 
@@ -77,7 +84,7 @@ function generateQuestion() {
     }
 
     // Incrementar el contador cuando se acaben las 5 preguntas
-    actualizarContador();
+    incrementarContador();
 
     // Mostrar botón "Volver a jugar"
     const playAgainButton = document.querySelector("#play-again-button");
@@ -128,12 +135,10 @@ function generateQuestion() {
   });
 }
 
-// Generar un número aleatorio de imágenes (entre 1 y 3)
 function generateRandomNumImages() {
   return Math.floor(Math.random() * 3) + 1;
 }
 
-// Función para manejar la respuesta del jugador
 function handleGuess(event) {
   const guess = parseInt(event.target.textContent);
   const resultElement = document.querySelector("#result");
@@ -159,7 +164,6 @@ function handleGuess(event) {
   setTimeout(generateQuestion, 1000);
 }
 
-// Función para reiniciar el juego
 function restartGame() {
   // Restablecer variables de juego
   score = 0;
