@@ -45,7 +45,8 @@ function resetGame() {
 
 // Función para incrementar el contador del juego en Firebase
 function incrementarContador() {
-  const juegoId = window.location.pathname.split("/").pop().replace(".html", "");
+  const juegoId = "3leones";  // Aquí defines el nombre del juego, por ejemplo, "leones"
+  
   const contadorRef = firebase.database().ref(`jugadores/${juegoId}/contador`);
   contadorRef.transaction(function(contador) {
     return (contador || 0) + 1;
@@ -54,13 +55,15 @@ function incrementarContador() {
 
 // Función para mostrar el contador actual en la página
 function mostrarContador() {
-  const juegoId = window.location.pathname.split("/").pop().replace(".html", "");
+  const juegoId = "3leones";  // Usar el mismo nombre del juego
+
   const contadorRef = firebase.database().ref(`jugadores/${juegoId}/contador`);
   contadorRef.on('value', (snapshot) => {
     const contador = snapshot.val();
     document.getElementById('contador').innerText = `Han jugado ${contador || 0} veces.`;
   });
 }
+
 
 // Mostrar el contador al cargar la página
 mostrarContador();
