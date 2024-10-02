@@ -88,8 +88,9 @@ function generateQuestion() {
       playAudio(intentarAudio);
     }
 
-    // Incrementar el contador cuando se acaben las 5 preguntas
-    incrementarContador();
+     // Incrementar el contador en Firebase
+     incrementarContadorFirebase();  // Usamos la función renombrada  
+    
 
     // Mostrar botón "Volver a jugar"
     const playAgainButton = document.querySelector("#play-again-button");
