@@ -22,141 +22,161 @@ function playAudio(audioElement) {
 megaphoneIcon.addEventListener('click', () => playAudio(preguntaLeonesAudio));
 
 // Generar imágenes aleatorias
-  const images = [
-        "https://raw.githubusercontent.com/AxelCotonGutierrez/Contarhasta3leones/master/img/leon.png",
-        "https://raw.githubusercontent.com/AxelCotonGutierrez/Contarhasta3leones/master/img/leon.png",
-        "https://raw.githubusercontent.com/AxelCotonGutierrez/Contarhasta3leones/master/img/leon.png"
-      ];
-    
-  let score = 0; // Contador de respuestas correctas
-  let questionsCount = 0; // Contador de preguntas realizadas
-  let previousNumImages = -1; // Variable para almacenar el número de imágenes de la pregunta anterior
-    
+const images = [
+  "https://raw.githubusercontent.com/AxelCotonGutierrez/Contarhasta3leones/master/img/leon.png",
+  "https://raw.githubusercontent.com/AxelCotonGutierrez/Contarhasta3leones/master/img/leon.png",
+  "https://raw.githubusercontent.com/AxelCotonGutierrez/Contarhasta3leones/master/img/leon.png"
+];
+
+let score = 0; // Contador de respuestas correctas
+let questionsCount = 0; // Contador de preguntas realizadas
+let previousNumImages = -1; // Variable para almacenar el número de imágenes de la pregunta anterior
+
 // Función para restablecer los resultados y mensajes del juego anterior
-  function resetGame() {
+function resetGame() {
   const scoreElement = document.querySelector("#score");
   const resultElement = document.querySelector("#result");
-    
-        scoreElement.textContent = "";
-        resultElement.textContent = "";
-        scoreElement.style.color = "initial";
-        resultElement.style.color = "initial";
-      }
-    
-  function generateQuestion() {
-    resetGame(); // Restablecer resultados y mensajes del juego anterior
-    
-// Verificar si se han realizado las 5 preguntas
+
+  scoreElement.textContent = "";
+  resultElement.textContent = "";
+  scoreElement.style.color = "initial";
+  resultElement.style.color = "initial";
+}
+
+// Función para actualizar el contador usando CountAPI
+function actualizarContador() {
+  const url = 'https://api.countapi.xyz/hit/mi-juego-de-leones/jugadores';
+  fetch(url)
+    .then(response => response.json())
+    .then(data => {
+      document.getElementById('contador').innerText = `Han jugado ${data.value} veces.`;
+    })
+    .catch(err => console.log('Error al actualizar el contador:', err));
+}
+
+// Llamamos a la función para mostrar el contador actual al cargar la página
+actualizarContador();
+
+// Función para generar una pregunta
+function generateQuestion() {
+  resetGame(); // Restablecer resultados y mensajes del juego anterior
+
+  // Verificar si se han realizado las 5 preguntas
   if (questionsCount >= 5) {
-     const scoreElement = document.querySelector("#score");
-     scoreElement.textContent = `\u00A1Fin!`;
-    
-  if (score === 5) {
-     scoreElement.textContent += ` \u00A1Felicidades, lo has conseguido!`;
-     scoreElement.style.color = "green";
-     playAudio(felicidadesAudio);
+    const scoreElement = document.querySelector("#score");
+    scoreElement.textContent = `\u00A1Fin!`;
+
+    if (score === 5) {
+      scoreElement.textContent += ` \u00A1Felicidades, lo has conseguido!`;
+      scoreElement.style.color = "green";
+      playAudio(felicidadesAudio);
     } else {
-     scoreElement.textContent += ` \u00A1Vuelve a intentarlo!`;
-     scoreElement.style.color = "red";
-     playAudio(intentarAudio);
-          }
-    
-// Mostrar botón "Volver a jugar"
-  const playAgainButton = document.querySelector("#play-again-button");
-  playAgainButton.style.display = "block";
-    
-  return;
+      scoreElement.textContent += ` \u00A1Vuelve a intentarlo!`;
+      scoreElement.style.color = "red";
+      playAudio(intentarAudio);
+    }
+
+    // Incrementar el contador cuando se acaben las 5 preguntas
+    actualizarContador();
+
+    // Mostrar botón "Volver a jugar"
+    const playAgainButton = document.querySelector("#play-again-button");
+    playAgainButton.style.display = "block";
+
+    return;
   }
-    
+
   let numImages = generateRandomNumImages();
-    
-    while (numImages === previousNumImages) {
-          numImages = generateRandomNumImages();
-        }
-    
-    previousNumImages = numImages;
-    
-// Generar imágenes aleatorias para la pregunta actual
+
+  while (numImages === previousNumImages) {
+    numImages = generateRandomNumImages();
+  }
+
+  previousNumImages = numImages;
+
+  // Generar imágenes aleatorias para la pregunta actual
   const chosenImages = [];
-    
+
   for (let i = 0; i < numImages; i++) {
-     const randomIndex = Math.floor(Math.random() * images.length);
-     const image = document.createElement("img");
-     image.src = images[randomIndex];
-     image.alt = "Imagen";
-     image.classList.add("game-image"); // Agregar la clase "game-image" a las imágenes
-     chosenImages.push(image);
-       }
-    
-// Mostrar imágenes en el HTML
+    const randomIndex = Math.floor(Math.random() * images.length);
+    const image = document.createElement("img");
+    image.src = images[randomIndex];
+    image.alt = "Imagen";
+    image.classList.add("game-image"); // Agregar la clase "game-image" a las imágenes
+    chosenImages.push(image);
+  }
+
+  // Mostrar imágenes en el HTML
   const imageContainer = document.querySelector("#image-container");
   imageContainer.innerHTML = ""; // Limpiar el contenedor de imágenes
-    
+
   chosenImages.forEach((image) => {
-     imageContainer.appendChild(image);
+    imageContainer.appendChild(image);
   });
-    
-// Pedir al jugador que adivine
+
+  // Pedir al jugador que adivine
   const guessButtons = document.querySelectorAll(".guess-button");
-    
-// Eliminar eventos click anteriores
+
+  // Eliminar eventos click anteriores
   guessButtons.forEach((button) => {
-     button.removeEventListener("click", handleGuess);
+    button.removeEventListener("click", handleGuess);
   });
-    
-// Asignar eventos click nuevos
+
+  // Asignar eventos click nuevos
   guessButtons.forEach((button) => {
     button.addEventListener("click", handleGuess);
-     });
-  }
-    
-  function generateRandomNumImages() {
+  });
+}
+
+// Generar un número aleatorio de imágenes (entre 1 y 3)
+function generateRandomNumImages() {
   return Math.floor(Math.random() * 3) + 1;
-  }
-    
- function handleGuess(event) {
+}
+
+// Función para manejar la respuesta del jugador
+function handleGuess(event) {
   const guess = parseInt(event.target.textContent);
   const resultElement = document.querySelector("#result");
   questionsCount++;
-    
+
   const numImages = document.querySelectorAll("#image-container img").length;
-    
+
   if (guess === numImages) {
     score++;
     resultElement.textContent = "\u00A1Correcto!";
     resultElement.style.color = "green";
     playAudio(correctoAudio);
-   } else {
+  } else {
     resultElement.textContent = `Incorrecto, había ${numImages} imágenes.`;
     resultElement.style.color = "red";
     playAudio(incorrectoAudio);
   }
-    
-// Actualizar puntaje y generar la siguiente pregunta
+
+  // Actualizar puntaje y generar la siguiente pregunta
   const scoreElement = document.querySelector("#score");
   scoreElement.textContent = ` ${score} respuestas correctas de ${questionsCount}`;
-    
-  setTimeout(generateQuestion, 1000);
- }
-    
- function restartGame() {
 
-// Restablecer variables de juego
-    score = 0;
-    questionsCount = 0;
-    previousNumImages = -1;
-    
-// Ocultar botón "Volver a jugar"
-    const playAgainButton = document.querySelector("#play-again-button");
-    playAgainButton.style.display = "none";
-    
-// Reiniciar el juego
-    generateQuestion();
-      }
-    
-// Llamar a la función para iniciar el juego
-    generateQuestion();
-      
-// Agregar evento clic al botón "Volver a jugar"
+  setTimeout(generateQuestion, 1000);
+}
+
+// Función para reiniciar el juego
+function restartGame() {
+  // Restablecer variables de juego
+  score = 0;
+  questionsCount = 0;
+  previousNumImages = -1;
+
+  // Ocultar botón "Volver a jugar"
   const playAgainButton = document.querySelector("#play-again-button");
-  playAgainButton.addEventListener("click", restartGame);
+  playAgainButton.style.display = "none";
+
+  // Reiniciar el juego
+  generateQuestion();
+}
+
+// Llamar a la función para iniciar el juego
+generateQuestion();
+
+// Agregar evento clic al botón "Volver a jugar"
+const playAgainButton = document.querySelector("#play-again-button");
+playAgainButton.addEventListener("click", restartGame);
