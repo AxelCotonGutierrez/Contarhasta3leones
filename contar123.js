@@ -88,7 +88,7 @@ function generateQuestion() {
       playAudio(intentarAudio);
     }
 
-     // Incrementar el contador en Firebase
+  // Incrementar el contador en Firebase
      incrementarContadorFirebase();  // Usamos la función renombrada  
     
 
