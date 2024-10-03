@@ -9,27 +9,12 @@
 	<link rel="stylesheet" href="nav.css">
 	<link rel="icon" href="icon.png" type="image/png">
 	<script src="https://axelcotongutierrez.github.io/learningmathematicas/assets/js/header.js"></script>
-	<!-- Incluimos las bibliotecas de Firebase -->
+	<script src="https://axelcotongutierrez.github.io/learningmathematicas/assets/js/footer.js"></script>
+	<!-- Incluir las bibliotecas de Firebase -->
 	<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
-  
-<script>
-	// Configuración de Firebase proporcionada
-	const firebaseConfig = {
-	  apiKey: "AIzaSyAE3Un38AeJrWtH83ndmXLNSKKFoKQI7K8",
-	  authDomain: "contador-de-juegos.firebaseapp.com",
-	  databaseURL: "https://contador-de-juegos-default-rtdb.europe-west1.firebasedatabase.app",
-	  projectId: "contador-de-juegos",
-	  storageBucket: "contador-de-juegos.appspot.com",
-	  messagingSenderId: "811452306589",
-	  appId: "1:811452306589:web:c0ceaada6ebdebb6d27074",
-	  measurementId: "G-QGKEEYVRTR"
-	};
-  
-	// Inicializar Firebase
-	const app = firebase.initializeApp(firebaseConfig);
-	const database = firebase.database();
-  </script>
+	<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>	
+	<script src="https://axelcotongutierrez.github.io/learningmathematicas/assets/js/contador.js"></script>
+
 </head>
 <body>
 	<header>
@@ -82,13 +67,7 @@
 	<br>
 
 	<br>
-	<footer class="footer">
-		<ul class="footer-links">
-			<li><a href="http://github.com/AxelCotonGutierrez"> <img src="githubinverseicon.jpg"></a></li>
-			<li><a href="https://www.youtube.com/@learningmathematicas"> <img src="youtubeinverseicon.jpg"></i></a></li>
-		</ul>
-	</footer>
-	
+	<div id="footer-placeholder"></div>
 </body>
 
 </html>
