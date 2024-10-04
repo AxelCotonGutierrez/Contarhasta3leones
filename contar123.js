@@ -11,6 +11,9 @@ const intentarAudio = new Audio('https://raw.githubusercontent.com/AxelCotonGuti
 const soundControl = document.querySelector('#sound-control');
 const megaphoneIcon = document.querySelector('#megaphone-icon');
 
+// Variable de control para determinar si el juego ha terminado
+let gameOver = false;
+
 // Función para reproducir audio si el sonido está activado
 function playAudio(audioElement) {
   if (soundControl.checked) {
@@ -66,11 +69,12 @@ function mostrarContador() {
   });
 }
 
-
 // Mostrar el contador al cargar la página
 mostrarContador();
 
 function generateQuestion() {
+  if (gameOver) return; // Si el juego ha terminado, no generar más preguntas
+  
   resetGame(); // Restablecer resultados y mensajes del juego anterior
 
   // Verificar si se han realizado las 5 preguntas
@@ -88,13 +92,15 @@ function generateQuestion() {
       playAudio(intentarAudio);
     }
 
-  // Incrementar el contador en Firebase
-     incrementarContadorFirebase();  // Usamos la función renombrada  
-    
+    // Incrementar el contador en Firebase
+    incrementarContadorFirebase();  
 
     // Mostrar botón "Volver a jugar"
     const playAgainButton = document.querySelector("#play-again-button");
     playAgainButton.style.display = "block";
+
+    // Marcar el juego como terminado
+    gameOver = true;
 
     return;
   }
@@ -146,6 +152,8 @@ function generateRandomNumImages() {
 }
 
 function handleGuess(event) {
+  if (gameOver) return; // Si el juego ha terminado, no manejar más respuestas
+  
   const guess = parseInt(event.target.textContent);
   const resultElement = document.querySelector("#result");
   questionsCount++;
@@ -175,6 +183,9 @@ function restartGame() {
   score = 0;
   questionsCount = 0;
   previousNumImages = -1;
+
+  // Marcar el juego como no terminado
+  gameOver = false;
 
   // Ocultar botón "Volver a jugar"
   const playAgainButton = document.querySelector("#play-again-button");
