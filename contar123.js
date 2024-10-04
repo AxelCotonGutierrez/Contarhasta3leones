@@ -46,6 +46,22 @@ function resetGame() {
   resultElement.style.color = "initial";
 }
 
+// Función para deshabilitar los botones de respuesta
+function disableGuessButtons() {
+  const guessButtons = document.querySelectorAll(".guess-button");
+  guessButtons.forEach(button => {
+    button.disabled = true;
+  });
+}
+
+// Función para habilitar los botones de respuesta
+function enableGuessButtons() {
+  const guessButtons = document.querySelectorAll(".guess-button");
+  guessButtons.forEach(button => {
+    button.disabled = false;
+  });
+}
+
 // Función para incrementar el contador del juego en Firebase
 function incrementarContadorFirebase() {
   const ruta = "Infantil/Matemáticas/Contar/3";  // Ruta definida para la categoría y tema
@@ -101,6 +117,9 @@ function generateQuestion() {
 
     // Marcar el juego como terminado
     gameOver = true;
+
+    // Deshabilitar botones de respuesta
+    disableGuessButtons();
 
     return;
   }
@@ -186,6 +205,9 @@ function restartGame() {
 
   // Marcar el juego como no terminado
   gameOver = false;
+
+  // Habilitar los botones de respuesta
+  enableGuessButtons();
 
   // Ocultar botón "Volver a jugar"
   const playAgainButton = document.querySelector("#play-again-button");
